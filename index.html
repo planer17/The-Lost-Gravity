@@ -5,67 +5,184 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>The Lost Gravity</title>
+  <meta name="description" content="Read The Lost Gravity online.">
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #111;
-      color: white;
+      background: #0b1020;
+      color: #ffffff;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
     header {
-      padding: 16px 20px;
-      background: #1a1a1a;
+      padding: 28px 6%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      border-bottom: 1px solid #333;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: #0b1020;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .header-link {
+      color: #ffffff;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 10px 16px;
+      border-radius: 10px;
+      transition: 0.2s ease;
+    }
+
+    .header-link:hover {
+      background: rgba(255, 255, 255, 0.10);
+    }
+
+    main {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+      padding: 70px 0 50px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      color: #9eb6ff;
+      margin-bottom: 16px;
     }
 
     h1 {
-      margin: 0;
-      font-size: 22px;
+      font-size: clamp(2.4rem, 7vw, 5.5rem);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      color: #cbd3ea;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 42px;
     }
 
     .button {
       display: inline-block;
-      padding: 10px 18px;
-      background: white;
-      color: black;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      font-weight: 700;
+      padding: 14px 22px;
+      border-radius: 12px;
+      transition: 0.2s ease;
     }
 
-    .button:hover {
-      opacity: 0.85;
+    .button-primary {
+      background: #ffffff;
+      color: #0b1020;
     }
 
-    .pdf-container {
-      flex: 1;
+    .button-primary:hover {
+      transform: translateY(-2px);
+      background: #e9edff;
+    }
+
+    .button-secondary {
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .button-secondary:hover {
+      background: rgba(255, 255, 255, 0.10);
+    }
+
+    .pdf-card {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    .pdf-toolbar {
+      color: #111827;
+      background: #f4f6fb;
+      padding: 14px 18px;
+      font-weight: 700;
+      border-bottom: 1px solid #dce2ee;
+    }
+
+    .pdf-viewer {
       width: 100%;
-    }
-
-    iframe {
-      width: 100%;
-      height: calc(100vh - 75px);
-      border: none;
-      background: white;
+      height: 75vh;
+      min-height: 600px;
+      border: 0;
+      display: block;
+      background: #ffffff;
     }
 
     .fallback {
       padding: 30px;
+      color: #111827;
       text-align: center;
+      line-height: 1.6;
+    }
+
+    .fallback a {
+      color: #1d4ed8;
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      color: #98a3bd;
+      padding: 28px 20px 40px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      .header-link {
+        display: none;
+      }
+
+      main {
+        width: 94%;
+        padding-top: 45px;
+      }
+
+      .pdf-viewer {
+        height: 70vh;
+        min-height: 500px;
+      }
     }
   </style>
 </head>
@@ -73,30 +190,83 @@
 <body>
 
   <header>
-    <h1>The Lost Gravity</h1>
+    <div class="logo">The Lost Gravity</div>
 
     <a
-      class="button"
-      href="The-Lost-Gravity.pdf"
+      class="header-link"
+      href="./The%20Lost%20Gravity.pdf"
       target="_blank"
+      rel="noopener"
     >
       Open PDF
     </a>
   </header>
 
-  <div class="pdf-container">
+  <main>
 
-    <iframe
-      src="The-Lost-Gravity.pdf"
-      title="The Lost Gravity PDF"
-    >
-      <div class="fallback">
-        Your browser cannot display PDFs.
-        <a href="The-Lost-Gravity.pdf">Click here to open the PDF.</a>
+    <section class="hero">
+      <p class="eyebrow">Digital Story</p>
+
+      <h1>The Lost Gravity</h1>
+
+      <p class="subtitle">
+        Read the full story directly in your browser or open the PDF in a new tab.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="button button-primary"
+          href="./The%20Lost%20Gravity.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Read the PDF
+        </a>
+
+        <a
+          class="button button-secondary"
+          href="./The%20Lost%20Gravity.pdf"
+          download="The Lost Gravity.pdf"
+        >
+          Download PDF
+        </a>
+
       </div>
-    </iframe>
+    </section>
 
-  </div>
+    <section class="pdf-card">
+
+      <div class="pdf-toolbar">
+        The Lost Gravity.pdf
+      </div>
+
+      <object
+        class="pdf-viewer"
+        data="./The%20Lost%20Gravity.pdf"
+        type="application/pdf"
+      >
+        <div class="fallback">
+          <p>Your browser cannot display the PDF inside this page.</p>
+          <p>
+            <a
+              href="./The%20Lost%20Gravity.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              Click here to open the PDF.
+            </a>
+          </p>
+        </div>
+      </object>
+
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 The Lost Gravity
+  </footer>
 
 </body>
 </html>
